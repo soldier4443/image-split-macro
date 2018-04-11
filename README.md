@@ -1,4 +1,4 @@
-# macro-for-photoshop-image-split
+# Image File Split Macro
 
 Macro for separating image files with various multipliers.
 **Only works on Pyhton 2**.
