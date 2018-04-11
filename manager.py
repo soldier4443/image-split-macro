@@ -6,6 +6,8 @@ import os
 command = sys.argv[1]
 
 if command == "create":
+    os.mkdir("drawable-mdpi")
+    os.mkdir("drawable-hdpi")
     os.mkdir("drawable-xhdpi")
     os.mkdir("drawable-xxhdpi")
     os.mkdir("drawable-xxxhdpi")
