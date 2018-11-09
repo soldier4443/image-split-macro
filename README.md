@@ -16,6 +16,20 @@ BI@3x.png -> drawable-xxhdpi/icon_app.png
 BI@4x.png -> drawable-xxxhdpi/icon_app.png
 ```
 
+## Options
+
+```
+$ python manager.py cd # create drawable folders
+$ python manager.py cm # create mipmap folders
+# python macro.py m "A" "B" # use mipmap targets instead of drawable.
+
+A@1x.png -> mipmap-mdpi/B.png
+A@1.5x.png -> mipmap-hdpi/B.png
+A@2x.png -> mipmap-xhdpi/B.png
+A@3x.png -> mipmap-xxhdpi/B.png
+A@4x.png -> mipmap-xxxhdpi/B.png
+```
+
 ## Be careful!
 
 It converts the files by order of the multiplier (a number after '@' and 'x')
