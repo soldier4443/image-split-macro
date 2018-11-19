@@ -2,6 +2,18 @@ import sys
 import shutil
 import os
 
+def findfiles(resource_type = "drawable"):
+    files = []
+    dpis = ["-mdpi", "-hdpi", "-xhdpi", "-xxhdpi", "-xxxhdpi"]
+
+    for dpi in dpis:
+        for f in os.listdir():
+            if f.startswith(resource_type) and f.endswith(dpi):
+                files.append(f)
+                break
+    
+    return files
+
 if len(sys.argv) == 3:
     option = "d"
     target_name = sys.argv[1]
@@ -12,9 +24,9 @@ elif len(sys.argv) == 4:
     dest_name = sys.argv[3]
 
 if option == 'd':
-    dest_folder = ["drawable-mdpi", "drawable-hdpi", "drawable-xhdpi", "drawable-xxhdpi", "drawable-xxxhdpi"]
+    dest_folder = findfiles()
 elif option == 'm':
-    dest_folder = ["mipmap-mdpi", "mipmap-hdpi", "mipmap-xhdpi", "mipmap-xxhdpi", "mipmap-xxxhdpi"]
+    dest_folder = findfiles("mipmap")
 
 file_list = []
 filenames = os.listdir(".")
